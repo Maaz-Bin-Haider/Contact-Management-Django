@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Add Contacts{% endblock title %}
+{% block body %}
+<center><h1 style="color: #1b76c6; margin: 10px 600px;">Add Contacts</h1></center>
+
+<div  style="background-color: tan; width: 400px; height: auto; padding: 30px; margin: 0 auto;">
+    <form method="post" action="/addContact/">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label for="phone" class="form-label">Enter Number</label>
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Number">
+        </div>
+        <div style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            
+        </div>
+    </form>
+</div>
+{% endblock body %}
